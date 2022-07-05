@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/bachelorarbeit-webspeech-tutorials.iml" filepath="$PROJECT_DIR$/.idea/bachelorarbeit-webspeech-tutorials.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webspeech-tutorials.iml" filepath="$PROJECT_DIR$/webspeech-tutorials.iml" />
+    </modules>
+  </component>
+</project>
