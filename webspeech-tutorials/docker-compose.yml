@@ -1,0 +1,8 @@
+version: "3"
+services:
+  webspeech-tutorials-app:
+    container_name: webspeech-tutorials
+    build: .
+    ports:
+      - "8080:80"
+
