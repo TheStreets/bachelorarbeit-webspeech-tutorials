@@ -7,8 +7,6 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  hciLogo: string = '../../assets/hci_logo.svg';
-  luhLogo: string = '../../assets/luh_logo.svg';
   illustration: string = '../../assets/illustration.svg';
 
   constructor() {
