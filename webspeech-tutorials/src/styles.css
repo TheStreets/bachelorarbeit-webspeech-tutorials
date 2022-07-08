@@ -58,6 +58,15 @@ a {
   }
 }
 
+@media screen  and (max-width: 960px){
+  .section__padding {
+    padding: 2rem 4rem;
+  }
+  .section__margin {
+    margin: 4rem;
+  }
+}
+
 .gradient__bg {
   width: 100%;
   height: 100%;
