@@ -9,6 +9,9 @@ export class CtaButtonComponent implements OnInit {
   @Input()
   displayText:string = '';
 
+  @Input()
+  link:string = '';
+
   @Output()
   onClick = new EventEmitter<any>();
 
