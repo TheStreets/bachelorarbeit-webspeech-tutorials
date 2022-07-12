@@ -15,4 +15,6 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  startTutorial(event:any) {
+  }
 }
