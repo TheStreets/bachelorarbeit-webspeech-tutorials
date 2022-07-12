@@ -9,14 +9,14 @@
         </h1>
       </header>
       <section class="wst__content">
-        <input class="wst__content-input" type="text" placeholder="Namen eingeben"/>
+        <input class="wst__content-input" type="text" #nameInput placeholder="Namen eingeben"/>
         <div class="wst__content-text">
           <p>Du kannst diese Tutorial-Reihe mit Maus und Tastatur durchlaufen</p>
           <p class="gradient__text">oder</p>
           <p>Sie verwenden Sprachkommandos</p>
         </div>
         <div class="wst__content-button_container">
-          <a href="">Weiter</a>
+          <a href="" type="button" (click)="handleButtonClick($event, nameInput.value)">Weiter</a>
         </div>
       </section>
   </div>
