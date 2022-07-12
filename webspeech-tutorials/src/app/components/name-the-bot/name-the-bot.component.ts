@@ -14,7 +14,6 @@ export class NameTheBotComponent implements OnInit {
   }
 
   handleButtonClick(event: any, name: string) {
-    event.preventDefault();
     console.log("Name:" + name);
   }
 }
