@@ -10,6 +10,7 @@ import { CtaButtonComponent } from './components/side-components/cta-button/cta-
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { TableOfContentsComponent } from './components/table-of-contents/table-of-contents.component';
+import { TutorialCardComponent } from './components/side-components/tutorial-card/tutorial-card.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TableOfContentsComponent } from './components/table-of-contents/table-o
     NameTheBotComponent,
     CtaButtonComponent,
     PageNotFoundComponent,
-    TableOfContentsComponent
+    TableOfContentsComponent,
+    TutorialCardComponent
   ],
   imports: [
     BrowserModule,
