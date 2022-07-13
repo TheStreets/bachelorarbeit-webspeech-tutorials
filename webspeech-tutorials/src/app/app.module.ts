@@ -9,6 +9,7 @@ import {FormsModule} from "@angular/forms";
 import { CtaButtonComponent } from './components/side-components/cta-button/cta-button.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { TableOfContentsComponent } from './components/table-of-contents/table-of-contents.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     NavbarComponent,
     NameTheBotComponent,
     CtaButtonComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    TableOfContentsComponent
   ],
   imports: [
     BrowserModule,
