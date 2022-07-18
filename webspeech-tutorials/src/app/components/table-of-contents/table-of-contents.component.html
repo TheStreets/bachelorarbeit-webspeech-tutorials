@@ -1,0 +1,25 @@
+<div class="wst__wrapper gradient__bg">
+  <app-navbar></app-navbar>
+  <header class="wst__header section__padding">
+    <div class="wst__header-content">
+      <h1>Table of Contents</h1>
+      <div class="wst__header-content_card_container">
+        <div *ngFor="let tutorial of tutorials">
+          <app-tutorial-card
+            [id]="tutorial.id"
+            [tutorialNumber]="tutorial.tutorialNumber"
+            [title]="tutorial.title"
+            [description]="tutorial.description"
+          (onClick)="handleNavigation(tutorial.id)">
+          </app-tutorial-card>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="wst__image-left">
+    <img src="{{bluePerson}}" alt="person that speaks">
+  </div>
+  <div class="wst__image-right">
+    <img src="{{redPerson}}" alt="person that speaks">
+  </div>
+</div>

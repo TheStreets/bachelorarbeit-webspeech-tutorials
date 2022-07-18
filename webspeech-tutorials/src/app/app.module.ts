@@ -9,6 +9,10 @@ import {FormsModule} from "@angular/forms";
 import { CtaButtonComponent } from './components/side-components/cta-button/cta-button.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { TableOfContentsComponent } from './components/table-of-contents/table-of-contents.component';
+import { TutorialCardComponent } from './components/side-components/tutorial-card/tutorial-card.component';
+import {HttpClientModule} from "@angular/common/http";
+import {DataService} from "./services/data.service";
 
 @NgModule({
   declarations: [
@@ -17,14 +21,17 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     NavbarComponent,
     NameTheBotComponent,
     CtaButtonComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    TableOfContentsComponent,
+    TutorialCardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

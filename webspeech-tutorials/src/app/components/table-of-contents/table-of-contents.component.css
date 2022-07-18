@@ -1,0 +1,63 @@
+.wst__wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.wst__header {
+  display: flex;
+  padding-bottom: 4rem;
+  padding-top: 0;
+  justify-content: center;
+}
+
+.wst__header-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wst__header-content h1 {
+  font-family: var(--font-family);
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 100px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+}
+
+.wst__header-content_card_container  {
+  padding-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.wst__image-left {
+  position: absolute;
+  top: 50%;
+  left: 3%;
+}
+
+.wst__image-left img{
+  width: 50%;
+  height: 50%;
+}
+
+.wst__image-right {
+  position: absolute;
+  top: 50%;
+  right: -8%;
+}
+
+.wst__image-right img{
+  width: 50%;
+  height: 50%;
+}
