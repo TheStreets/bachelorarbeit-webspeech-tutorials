@@ -9,6 +9,7 @@ const routes: Routes = [
   {path: 'home', component: HomepageComponent},
   {path: 'bot-name', component: NameTheBotComponent},
   {path: 'table-of-contents', component: TableOfContentsComponent},
+  {path: 'tutorials/:id', component: PageNotFoundComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent}
 ];
