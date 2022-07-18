@@ -1,11 +1,15 @@
 .wst__card {
-  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   width: 350px;
   height: 350px;
   font-family: var(--font-family);
   cursor: pointer;
+  transition: .1s;
+  transform: scale(1);
 }
 
 .wst__card-title {
@@ -42,6 +46,13 @@
 }
 
 .wst__card-status {
-  padding-top: 1rem;
+  justify-self: flex-end;
   width: 100%;
+  margin-top: auto;
+  padding-bottom: .3rem;
+}
+
+.wst__card:hover {
+  transition: .1s;
+  transform: scale(1.1);
 }

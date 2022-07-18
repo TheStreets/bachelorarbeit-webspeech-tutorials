@@ -7,10 +7,10 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class TutorialCardComponent implements OnInit {
 
-  id: number = 1;
-
   @Input()
-  number: string = '01';
+  id: number = 1;
+  @Input()
+  tutorialNumber: string = '01';
   @Input()
   title: string = 'Hallo Welt';
   @Input()
