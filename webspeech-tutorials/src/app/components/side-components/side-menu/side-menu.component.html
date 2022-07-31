@@ -1,0 +1,74 @@
+<div class="wst__navigation" [ngClass]="{wst__navigation_expanded: this.isOpen}">
+  <fa-icon [icon]="menuIcon" class="menuToggle" (click)="openMenu()"></fa-icon>
+  <ul class="wst__navigation_list">
+    <li class="wst__navigation_item">
+      <a href="#" routerLink="/home">
+            <span class="icon">
+              <ion-icon name="home"></ion-icon>
+            </span>
+        <span *ngIf="isOpen" class="text">Home</span>
+      </a>
+    </li>
+    <li class="wst__navigation_item">
+      <a href="#" routerLink="/table-of-contents">
+            <span class="icon">
+              <ion-icon name="book"></ion-icon>
+            </span>
+        <span *ngIf="isOpen" class="text">Tutorials</span>
+      </a>
+    </li>
+    <li class="wst__navigation_item">
+      <a href="#" routerLink="/home">
+            <span class="icon">
+              <ion-icon name="musical-notes"></ion-icon>
+            </span>
+        <span *ngIf="isOpen" class="text">Speech Synthesis</span>
+      </a>
+    </li>
+    <li class="wst__navigation_item" *ngIf="isOpen">
+      <a href="#">
+        <span class="icon"></span>
+        <span class="text">Level: Easy</span>
+      </a>
+    </li>
+    <li class="wst__navigation_item" *ngIf="isOpen" >
+      <a href="#">
+        <span class="icon"></span>
+        <span class="text">Level: Middle</span>
+      </a>
+    </li>
+    <li class="wst__navigation_item" *ngIf="isOpen" >
+      <a href="#">
+        <span class="icon"></span>
+        <span class="text">Level: Hard</span>
+      </a>
+    </li>
+
+    <li class="wst__navigation_item">
+      <a href="#">
+            <span class="icon">
+              <ion-icon name="mic"></ion-icon>
+            </span>
+        <span *ngIf="isOpen" class="text">Speech Recognition</span>
+      </a>
+    </li>
+    <li class="wst__navigation_item" *ngIf="isOpen" >
+      <a href="#">
+        <span class="icon"></span>
+        <span class="text">Level: Easy</span>
+      </a>
+    </li>
+    <li class="wst__navigation_item" *ngIf="isOpen" >
+      <a href="#">
+        <span class="icon"></span>
+        <span class="text">Level: Middle</span>
+      </a>
+    </li>
+    <li class="wst__navigation_item" *ngIf="isOpen" >
+      <a href="#">
+        <span class="icon"></span>
+        <span class="text">Level: Hard</span>
+      </a>
+    </li>
+  </ul>
+</div>

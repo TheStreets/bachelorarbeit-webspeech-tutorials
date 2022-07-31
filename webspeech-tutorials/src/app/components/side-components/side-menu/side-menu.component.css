@@ -1,0 +1,108 @@
+
+.wst__navigation {
+  position: fixed;
+  inset: 20px 0 20px 20px;
+  width: 75px;
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.wst__navigation .menuToggle {
+  color: white;
+  font-size: 1.8rem;
+  padding-top: 20px;
+
+  cursor: pointer;
+}
+
+.wst__navigation ul li {
+  list-style: none;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  padding: 0 10px;
+  transition: 0.5s;
+  gap: 10px;
+}
+
+.wst__navigation_expanded {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+}
+
+.wst__navigation_expanded fa-icon {
+  align-self: flex-end;
+  padding-right: 20px;
+}
+
+.wst__navigation_expanded ul,
+.wst__navigation ul {
+  color: white;
+  font-family: var(--font-family);
+  margin: auto 0;
+}
+
+.wst__navigation_expanded ul li,
+.wst__navigation ul li {
+  list-style: none;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  /*padding: 0 10px;*/
+  transition: 0.5s;
+  gap: 10px;
+}
+
+.wst__navigation_expanded ul li a,
+.wst__navigation ul li a {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+}
+
+.wst__navigation_expanded ul li a .icon,
+.wst__navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 40px;
+  height: 40px;
+  line-height: 60px;
+  border-radius: 10px;
+}
+
+.wst__navigation_expanded ul li a .icon {
+  margin-right: 15px;
+}
+
+.wst__navigation ul li a .icon .text {
+  display: none;
+}
+
+.wst__navigation_expanded ul li:nth-child(1) a .icon,
+.wst__navigation_expanded ul li:nth-child(2) a .icon,
+.wst__navigation_expanded ul li:nth-child(3) a .icon,
+.wst__navigation_expanded ul li:nth-child(7) a .icon,
+.wst__navigation ul li:nth-child(1) a .icon,
+.wst__navigation ul li:nth-child(2) a .icon,
+.wst__navigation ul li:nth-child(3) a .icon,
+.wst__navigation ul li:nth-child(4) a .icon {
+  outline: 1px solid white;
+}
+
+.wst__navigation_expanded ul li:nth-child(4) a .icon {
+  outline: none;
+}
+
+.wst__navigation_expanded ul li a .icon ion-icon,
+.wst__navigation ul li a .icon ion-icon {
+  width: 75%;
+  height: 75%;
+}
