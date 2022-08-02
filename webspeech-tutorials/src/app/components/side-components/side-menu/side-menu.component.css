@@ -8,13 +8,13 @@
   flex-direction: column;
   align-items: center;
   transition: 0.3s;
+  z-index: 9999;
 }
 
 .wst__navigation .menuToggle {
   color: white;
   font-size: 1.8rem;
   padding-top: 20px;
-
   cursor: pointer;
 }
 
