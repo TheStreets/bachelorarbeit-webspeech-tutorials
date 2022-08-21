@@ -9,7 +9,7 @@ import {EditorData} from "../../models/editor.data.model";
 @Component({
   selector: 'app-tutorial',
   templateUrl: './tutorial.component.html',
-  styleUrls: ['./tutorial.component.css']
+  styleUrls: ['./tutorial.component.scss']
 })
 export class TutorialComponent implements OnInit, AfterViewInit {
 
