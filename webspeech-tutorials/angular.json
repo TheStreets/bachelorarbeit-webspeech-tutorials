@@ -100,7 +100,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "nodes_modules/boostrap/dist/js/bootstrap.js"
+            ]
           }
         }
       }
