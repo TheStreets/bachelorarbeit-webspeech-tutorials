@@ -7,7 +7,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 @Component({
   selector: 'app-table-of-contents',
   templateUrl: './table-of-contents.component.html',
-  styleUrls: ['./table-of-contents.component.css']
+  styleUrls: ['./table-of-contents.component.scss']
 })
 export class TableOfContentsComponent implements OnInit, OnDestroy {
 
