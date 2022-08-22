@@ -17,6 +17,7 @@ import {TutorialComponent} from './components/tutorial/tutorial.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {SideMenuComponent} from './components/side-components/side-menu/side-menu.component';
 import {AngularSplitModule} from "angular-split";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {AngularSplitModule} from "angular-split";
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
-    AngularSplitModule
+    AngularSplitModule,
+    NgbModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent],
