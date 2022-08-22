@@ -101,7 +101,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "nodes_modules/boostrap/dist/js/bootstrap.js"
+              "nodes_modules/boostrap/dist/js/bootstrap.bundle.js"
             ]
           }
         }
