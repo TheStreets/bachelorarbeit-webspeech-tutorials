@@ -1,14 +1,27 @@
-<nav class="wst__navbar">
-  <div class="wst__navbar-links">
-    <div class="wst__navbar-links_logo_hci">
-      <img src="{{ hciLogo }}" alt="logo">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark-blue px-5 py-3">
+  <div class="container-fluid">
+    <a href="" class="navbar-brand">
+      <img src="{{ luhLogo }}" alt="logo" width="150">
+    </a>
+    <button class="navbar-toggler" type="button"
+            (click)="isMenuCollapsed = !isMenuCollapsed"
+            data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " [ngbCollapse]="isMenuCollapsed">
+      <ul class="navbar-nav mx-auto">
+        <li class="navbar-item">
+          <a class="nav-link" routerLinkActive="activeLink" routerLink="/home">Home</a>
+        </li>
+        <li class="navbar-item">
+          <a class="nav-link" routerLinkActive="activeLink" routerLink="/table-of-contents">Tutorials</a>
+        </li>
+      </ul>
     </div>
-    <div class="wst__navbar-links_container">
-      <p><a href="#">Home</a></p>
-      <p><a href="#">Tutorials</a></p>
-    </div>
-    <div class="wst__navbar-links_logo_luh">
-      <img src="{{ luhLogo }}" alt="logo">
-    </div>
+    <a href="" class="navbar-brand d-none d-md-block">
+      <img src="{{ hciLogo }}" alt="logo" width="150">
+    </a>
   </div>
 </nav>

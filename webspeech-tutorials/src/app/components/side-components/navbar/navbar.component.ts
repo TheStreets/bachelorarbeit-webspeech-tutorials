@@ -9,6 +9,7 @@ export class NavbarComponent implements OnInit {
 
   hciLogo: string = '../../assets/hci_logo.svg';
   luhLogo: string = '../../assets/luh_logo.svg';
+  isMenuCollapsed = true;
 
   constructor() { }
 
