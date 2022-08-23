@@ -1,31 +1,46 @@
-<div class="wst__wrapper gradient__bg">
-  <app-navbar></app-navbar>
-  <header class="wst__header section__padding">
-    <div class="wst__header-content">
-      <p>Bachelor-Arbeit: Eiham Salieba</p>
-      <h1 class="gradient__text">WebSpeech-API Tutorial</h1>
-      <div class="wst__header-content_explanation">
-        <p>Speech input and output technologies in Web browsers offer an alternative
-          interaction modality, which is particularly beneficial for visually impaired persons. But
-          also multimodal user interfaces can be built with speech input and output as a
-          component. Speech input and output technologies can also form the basis of
-          conversational user interfaces. The goals of this thesis are twofold:
-        </p>
-        <ul>
-          <li>Explore the state of the art of speech input and output technologies in current Web browsers,
-            focusing on Google Chrome and Mozilla Firefox
-          </li>
-          <li>
-            Develop two example scenarios of speech interactions in browsers, implemented as browser extensions
-          </li>
-        </ul>
+<section class="row mt-5 justify-content-center align-items-center ">
+  <div class="col text-lg-start">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <p class="text-white">Bachelor-Arbeit: Eiham Salieba</p>
+        </div>
       </div>
-      <div class="wst__header-button_container">
-        <app-cta-button displayText="Start Tutorial" (onClick)="startTutorial($event)"></app-cta-button>
+      <div class="row">
+        <div class="col">
+          <h1 class="gradient__text display-1 fw-bold text-uppercase">WebSpeech-API Tutorial</h1>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col">
+          <p class="lead text-white">Speech input and output technologies in Web browsers offer an alternative
+            interaction modality, which is particularly beneficial for visually impaired persons. But
+            also multimodal user interfaces can be built with speech input and output as a
+            component. Speech input and output technologies can also form the basis of
+            conversational user interfaces. The goals of this thesis are twofold:
+          </p>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <ul class="lead text-white">
+            <li>Explore the state of the art of speech input and output technologies in current Web browsers,
+              focusing on Google Chrome and Mozilla Firefox
+            </li>
+            <li>
+              Develop two example scenarios of speech interactions in browsers, implemented as browser extensions
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col">
+          <app-cta-button displayText="Start Tutorial" (onClick)="startTutorial($event)"></app-cta-button>
+        </div>
       </div>
     </div>
-    <div class="wst__header-image_container">
-      <img src="{{ illustration }}" alt="illustration">
-    </div>
-  </header>
-</div>
+  </div>
+  <div class="col-md-5 d-none d-lg-block my-auto text-center">
+    <img class="img-fluid d-none-lg" src="{{ illustration }}" alt="illustration">
+  </div>
+</section>
