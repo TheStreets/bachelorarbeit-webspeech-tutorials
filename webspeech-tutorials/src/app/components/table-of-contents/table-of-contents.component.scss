@@ -1,0 +1,15 @@
+.shape {
+  border-radius: 100% 0 100% 0% / 100% 100% 0% 0%;
+  background: var(--gradient);
+  z-index: 0;
+}
+
+.image-container {
+  bottom: 5%;
+  right: 5%;
+}
+
+.list-group-item {
+  background: var(--color-bg);
+  cursor: pointer;
+}
