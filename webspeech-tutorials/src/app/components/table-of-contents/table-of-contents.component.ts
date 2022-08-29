@@ -11,27 +11,15 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class TableOfContentsComponent implements OnInit, OnDestroy {
 
-  bluePerson: string = '../../assets/person_blue.svg'
-  redPerson: string = '../../assets/person_red.svg'
-  tutorials: Tutorial[] = [];
-  private _subscription: Subscription = new Subscription();
-
-  constructor(private _dataService: DataService, private routerService: Router,
-              private activatedRoute: ActivatedRoute) {
+  constructor(private routerService: Router) {
   }
 
-  ngOnInit(): void {
-    this._subscription = this._dataService.getTutorials().subscribe(data => {
-      this.tutorials = data;
-    });
-  }
+  ngOnInit(): void {}
 
   ngOnDestroy(): void {
-    this._subscription.unsubscribe();
   }
 
-  handleNavigation(id: number) {
-    this.routerService.navigate(['tutorials', id])
+  navigateToTutorial(id: number): void {
+    this.routerService.navigate(['tutorials', id]);
   }
-
 }

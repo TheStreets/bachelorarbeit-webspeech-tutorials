@@ -1,16 +1,131 @@
-<div class="row justify-content-center align-items-center mt-5">
+<div class="row justify-content-center align-items-center mt-4">
   <div class="col">
     <h1 class="gradient__text display-1 fw-bold text-uppercase text-center">Table of Contents</h1>
   </div>
-  <div class="row justify-content-center align-items-center mt-5">
-    <div class="col" *ngFor="let tutorial of tutorials">
-      <app-tutorial-card
-        [id]="tutorial.id"
-        [tutorialNumber]="tutorial.tutorialNumber"
-        [title]="tutorial.title"
-        [description]="tutorial.description"
-        (onClick)="handleNavigation(tutorial.id)">
-      </app-tutorial-card>
+  <div class="row justify-content-center align-items-center mt-2">
+    <div class="container-fluid">
+      <div class="row row-eq-height">
+        <div class="col-6 pb-md-2">
+          <div class="card gradient__bg d-flex h-100">
+            <div class="card-body position-relative">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col">
+                          <h1 class="h1 text-white fw-bold">SpeechSynthesis</h1>
+                        </div>
+                      </div>
+                      <div class="row mt-5">
+                        <div class="col">
+                          <p class="blockquote text-white">The SpeechSynthesis interface is the scripted web API for
+                            controlling a
+                            text-to-speech output.</p>
+                        </div>
+                      </div>
+                      <div class="row mt-5">
+                        <div class="col">
+                          <h3 class="h2 text-white">Tutorials</h3>
+                        </div>
+                      </div>
+                      <div class="row my-2">
+                        <div class="col">
+                          <div class="d-flex flex-column">
+                            <ul class="list-group">
+                              <a class="list-group-item link-secondary h5 pb-3" (click)="navigateToTutorial(1)">Basic</a>
+                              <a class="list-group-item link-secondary h5" (click)="navigateToTutorial(2)">SpeechSynthesisUtterance</a>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="position-absolute image-container d-none d-lg-block">
+                <img class="img-fluid" src="../../../../assets/loudspeaker.svg" width="200" height="200">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 pb-md-2">
+          <div class="card  d-flex h-100 gradient__bg">
+            <div class="card-body position-relative">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col">
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col">
+                                <h1 class="h1 text-white fw-bold">Speech-Recognition</h1>
+                              </div>
+                            </div>
+                            <div class="row mt-5">
+                              <div class="col">
+                                <p class="blockquote text-white">The speech recognition interface is the scripted web API
+                                  for controlling a
+                                  given recognition.</p>
+                              </div>
+                            </div>
+                            <div class="row mt-5">
+                              <div class="col">
+                                <h3 class="h3 text-white">Tutorials</h3>
+                              </div>
+                            </div>
+                            <div class="row my-2">
+                              <div class="col">
+                                <div class="d-flex flex-column">
+                                  <ul class="list-group">
+                                    <a class="link-secondary h5 list-group-item" (click)="navigateToTutorial(3)">Basic</a>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="position-absolute image-container d-none d-lg-block">
+                              <img class="img-fluid" src="../../../../assets/microphone.svg" width="90" height="80">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row row-eq-height pt-md-2">
+        <div class="col">
+          <div class="card gradient__bg d-flex h-100">
+            <div class="card-body position-relative">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col">
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col">
+                                <h1 class="h1 text-white fw-bold text-center">Examples</h1>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
