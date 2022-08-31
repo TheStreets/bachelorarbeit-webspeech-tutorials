@@ -1,37 +1,27 @@
-<div class="wst__wrapper gradient__bg">
-  <div class="wst__content-container">
-    <!--    <app-side-menu></app-side-menu>-->
-    <div class="wst__content-container">
-
-      <div class="split-top-container">
+<div class="wrapper-container">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
         <as-split unit="percent"
                   [direction]="'horizontal'"
                   [gutterSize]="gutterSizeVertical"
                   gutterAriaLabel="adjustable divider between two views">
           <as-split-area [size]="sizeTopLeft">
-            <div class="wst__editor-title">
-              <h1>JavaScript</h1>
-            </div>
             <div class="wst__editor">
-              <div class="ace-editor"
-                   #jsEditor>
-              </div>
+              <div class="ace-editor" #jsEditor></div>
             </div>
           </as-split-area>
           <as-split-area [size]="sizeTopRight">
             <div class="wst__editor">
-              <div class="wst__editor-title">
-                <h1>Html</h1>
-              </div>
-              <div class="ace-editor"
-                   #htmlEditor>
-              </div>
+              <div class="ace-editor" #htmlEditor></div>
             </div>
           </as-split-area>
         </as-split>
       </div>
-      <div class="split-bottom-container">
-        <iframe #output  height="sizeBottom"></iframe>
+    </div>
+    <div class="row">
+      <div class="col col-custom bg-secondary">
+          <iframe #output></iframe>
       </div>
     </div>
   </div>
