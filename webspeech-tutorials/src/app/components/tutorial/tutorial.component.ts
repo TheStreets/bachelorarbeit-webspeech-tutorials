@@ -2,8 +2,9 @@ import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/
 import * as ace from "ace-builds";
 import 'ace-builds/src-noconflict/ext-language_tools';
 import {Ace} from "ace-builds";
-import {UtilsService} from "../../services/utils.service";
+import {UtilService} from "../../services/util.service";
 import {EditorData} from "../../models/editor.data.model";
+import {ActivatedRoute} from "@angular/router";
 
 
 @Component({
@@ -45,30 +46,33 @@ export class TutorialComponent implements OnInit, AfterViewInit {
   jsAceEditor!: Ace.Editor;
   htmlAceEditor!: Ace.Editor;
 
-  constructor(private utilsService: UtilsService) {
+  constructor(private utilService: UtilService, private activatedRoute: ActivatedRoute) {
+    const id = activatedRoute.snapshot.paramMap.get('id');
+    this.utilService.displayTutorial(parseInt(id!));
   }
 
   ngOnInit(): void {
-
+    console.log('ngOnInit');
   }
 
   ngAfterViewInit(): void {
-    this.utilsService.editorDataSubject?.subscribe( (editorData) => {
+    console.log('ngAfterViewInit');
+    this.utilService.editorDataSubject?.subscribe( (editorData) => {
       // setting the iframe content from the editor
-      this.iframe.nativeElement.srcdoc = this.utilsService.createTemplate(editorData.html, editorData.js);
+      this.iframe.nativeElement.srcdoc = this.utilService.createTemplate(editorData.html, editorData.js);
     });
 
     this.setupEditor();
 
-    this.htmlAceEditor.session.setValue(this.utilsService.tutorialData.html);
-    this.jsAceEditor.session.setValue(this.utilsService.tutorialData.js);
+    this.htmlAceEditor.session.setValue(this.utilService.tutorialData.html);
+    this.jsAceEditor.session.setValue(this.utilService.tutorialData.js);
 
     // on change event triggered, if someone types in the editor
     this.htmlAceEditor.on('change', () => {
-      this.utilsService.editorDataSubject?.next(new EditorData(this.htmlAceEditor.getValue(), this.jsAceEditor.getValue()));
+      this.utilService.editorDataSubject?.next(new EditorData(this.htmlAceEditor.getValue(), this.jsAceEditor.getValue()));
     });
     this.jsAceEditor.on('change', () => {
-      this.utilsService.editorDataSubject?.next(new EditorData(this.htmlAceEditor.getValue(), this.jsAceEditor.getValue()));
+      this.utilService.editorDataSubject?.next(new EditorData(this.htmlAceEditor.getValue(), this.jsAceEditor.getValue()));
     });
   }
 

@@ -9,7 +9,7 @@ const beautify = require('js-beautify');
 @Injectable({
   providedIn: 'root'
 })
-export class UtilsService implements OnDestroy {
+export class UtilService implements OnDestroy {
 
   editorDataSubject?: BehaviorSubject<EditorData>;
   tutorialData!: EditorData;
@@ -34,9 +34,20 @@ export class UtilsService implements OnDestroy {
   };
 
   constructor() {
-    this.tutorialData = this.createSpeechSynthesesBasicTutorial_1();
-    // this.tutorialData = this.createSpeechSynthesesAdvancedTutorial_2();
-    // this.tutorialData = this.createSpeechRecognitionBasicTutorial_1();
+  }
+
+  displayTutorial(tutorialNumber: number) {
+    switch (tutorialNumber) {
+      case 1:
+        this.tutorialData = this.createSpeechSynthesesTutorial_1();
+        break;
+      case 2:
+        this.tutorialData = this.createSpeechSynthesesTutorial_2();
+        break;
+      case 3:
+        this.tutorialData = this.createSpeechRecognitionTutorial_1();
+        break;
+    }
     // this.tutorialData = this.createSpeechRecognitionAdvancedTutorial_2();
     this.editorDataSubject = new BehaviorSubject<EditorData>(this.tutorialData);
     this.editorDataSubject.subscribe((data) => this.tutorialData = data);
@@ -192,7 +203,7 @@ export class UtilsService implements OnDestroy {
       </div>`);
   }
 
-  private createSpeechSynthesesBasicTutorial_1() {
+  private createSpeechSynthesesTutorial_1() {
     return new EditorData(this.createHTMLForSpeechSynthesesBasicTutorial_1(),
       this.createJSForSpeechSynthesesBasicTutorial_1());
   }
@@ -377,7 +388,7 @@ export class UtilsService implements OnDestroy {
       </div>`);
   }
 
-  private createSpeechSynthesesAdvancedTutorial_2() {
+  private createSpeechSynthesesTutorial_2() {
     return new EditorData(this.createHTMLForSpeechSynthesesAdvancedTutorial_2(),
       this.createJSForSpeechSynthesesAdvancedTutorial_2());
   }
@@ -650,7 +661,7 @@ export class UtilsService implements OnDestroy {
     });`);
   }
 
-  private createSpeechRecognitionBasicTutorial_1():EditorData {
+  private createSpeechRecognitionTutorial_1(): EditorData {
     return new EditorData(this.createHTMLForSpeechRecognitionBasicTutorial_1(),
       this.createJSForSpeechRecognitionBasicTutorial_1());
   }
