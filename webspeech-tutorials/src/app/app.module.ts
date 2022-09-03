@@ -12,7 +12,6 @@ import {TableOfContentsComponent} from './components/table-of-contents/table-of-
 import {HttpClientModule} from "@angular/common/http";
 import {DataService} from "./services/data.service";
 import {TutorialComponent} from './components/tutorial/tutorial.component';
-import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {SideMenuComponent} from './components/side-components/side-menu/side-menu.component';
 import {AngularSplitModule} from "angular-split";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -33,7 +32,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule,
     AngularSplitModule,
     NgbModule
   ],
