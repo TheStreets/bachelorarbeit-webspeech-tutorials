@@ -14,6 +14,7 @@ import {DataService} from "./services/data.service";
 import {TutorialComponent} from './components/tutorial/tutorial.component';
 import {AngularSplitModule} from "angular-split";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {PortalModule} from "@angular/cdk/portal";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     HttpClientModule,
     AngularSplitModule,
-    NgbModule
+    NgbModule,
+    PortalModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent],
