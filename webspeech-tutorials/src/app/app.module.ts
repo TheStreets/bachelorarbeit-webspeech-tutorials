@@ -12,10 +12,9 @@ import {TableOfContentsComponent} from './components/table-of-contents/table-of-
 import {HttpClientModule} from "@angular/common/http";
 import {DataService} from "./services/data.service";
 import {TutorialComponent} from './components/tutorial/tutorial.component';
-import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import {SideMenuComponent} from './components/side-components/side-menu/side-menu.component';
 import {AngularSplitModule} from "angular-split";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {PortalModule} from "@angular/cdk/portal";
 
 @NgModule({
   declarations: [
@@ -26,16 +25,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PageNotFoundComponent,
     TableOfContentsComponent,
     TutorialComponent,
-    SideMenuComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule,
     AngularSplitModule,
-    NgbModule
+    NgbModule,
+    PortalModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent],
