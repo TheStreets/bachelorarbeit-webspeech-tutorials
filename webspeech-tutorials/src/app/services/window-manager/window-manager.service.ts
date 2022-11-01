@@ -36,7 +36,7 @@ export class WindowManagerService implements OnDestroy {
         const injector = this.createInjector(windowData);
         existingTab.componentInstance = this.attachContainer(component, existingTab.outlet, injector);
       }
-      this.focusWindowTab(windowData.tabId);
+      // this.focusWindowTab(windowData.tabId);
     }
   }
 
@@ -63,12 +63,13 @@ export class WindowManagerService implements OnDestroy {
       data.tabId
     );
     // Wait for window instance to be created
-    if(windowInstance) {
+    if (windowInstance) {
       setTimeout(() => {
         this.createCDKPortal(component, data, windowInstance);
       }, 300);
+    } else {
+      throw new Error('WindowInstance is Null');
     }
-    throw new Error('WindowInstance is Null');
   }
 
   private getWindowTab(id: string): WindowTab {

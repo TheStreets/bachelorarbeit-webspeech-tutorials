@@ -5,6 +5,8 @@ import {Ace} from "ace-builds";
 import {UtilService} from "../../services/util.service";
 import {EditorData} from "../../models/editor.data.model";
 import {ActivatedRoute} from "@angular/router";
+import {WindowManagerService} from "../../services/window-manager/window-manager.service";
+import {IframeComponent} from "../iframe/iframe.component";
 
 
 @Component({
@@ -45,10 +47,12 @@ export class TutorialComponent implements OnInit, AfterViewInit {
   editorTheme: string = 'ace/theme/cobalt';
   jsAceEditor!: Ace.Editor;
   htmlAceEditor!: Ace.Editor;
+  tutorialId!: string | null;
 
-  constructor(private utilService: UtilService, private activatedRoute: ActivatedRoute) {
-    const id = activatedRoute.snapshot.paramMap.get('id');
-    this.utilService.displayTutorial(parseInt(id!));
+  constructor(private utilService: UtilService, private activatedRoute: ActivatedRoute,
+              private windowManager: WindowManagerService) {
+    this.tutorialId = activatedRoute.snapshot.paramMap.get('id');
+    this.utilService.displayTutorial(parseInt(this.tutorialId!));
   }
 
   ngOnInit(): void {
@@ -57,9 +61,11 @@ export class TutorialComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     console.log('ngAfterViewInit');
-    this.utilService.editorDataSubject?.subscribe( (editorData) => {
+    this.utilService.editorDataSubject?.subscribe((editorData) => {
       // setting the iframe content from the editor
-      this.iframe.nativeElement.srcdoc = this.utilService.createTemplate(editorData.html, editorData.js);
+      // this.iframe.nativeElement.srcdoc = this.utilService.createTemplate(editorData.html, editorData.js);
+      console.log('updating data');
+      this.openOrUpdateTabData(editorData);
     });
 
     this.setupEditor();
@@ -90,5 +96,15 @@ export class TutorialComponent implements OnInit, AfterViewInit {
     this.htmlAceEditor.setTheme(this.editorTheme);
     this.htmlAceEditor.session.setMode('ace/mode/html');
 
+  }
+
+  /**
+   * on the first time the function is called, the tab is opened, on the second, third ... times,
+   * the tab gets new data
+   * */
+  openOrUpdateTabData(editorData: EditorData) {
+    const data = this.windowManager.createInjectionData<EditorData>(
+      `${this.tutorialId}`, 'Tutorial ' + this.tutorialId, editorData);
+    this.windowManager.openOrFocusWindowTab(IframeComponent, data, component => false);
   }
 }

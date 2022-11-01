@@ -15,6 +15,7 @@ import {TutorialComponent} from './components/tutorial/tutorial.component';
 import {AngularSplitModule} from "angular-split";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {PortalModule} from "@angular/cdk/portal";
+import { IframeComponent } from './components/iframe/iframe.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {PortalModule} from "@angular/cdk/portal";
     PageNotFoundComponent,
     TableOfContentsComponent,
     TutorialComponent,
+    IframeComponent,
   ],
   imports: [
     BrowserModule,
