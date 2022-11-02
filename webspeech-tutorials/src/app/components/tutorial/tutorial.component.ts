@@ -7,6 +7,7 @@ import {EditorData} from "../../models/editor.data.model";
 import {ActivatedRoute} from "@angular/router";
 import {WindowManagerService} from "../../services/window-manager/window-manager.service";
 import {IframeComponent} from "../iframe/iframe.component";
+import {TestComponent} from "../test/test.component";
 
 
 @Component({

@@ -47,8 +47,10 @@ export class UtilService implements OnDestroy {
       case 3:
         this.tutorialData = this.createSpeechRecognitionTutorial_1();
         break;
+      case 4:
+        this.tutorialData = this.createSpeechRecognitionAdvancedTutorial_2();
+        break;
     }
-    // this.tutorialData = this.createSpeechRecognitionAdvancedTutorial_2();
     this.editorDataSubject = new BehaviorSubject<EditorData>(this.tutorialData);
     this.editorDataSubject.subscribe((data) => this.tutorialData = data);
   }
@@ -58,9 +60,13 @@ export class UtilService implements OnDestroy {
       `<html lang="de">
         <head>
           <title>Output</title>
-<!--          <link rel="stylesheet" href="./../../assets/iframe.css">-->
           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
         </head>
+        <style>
+            min-width: 100vw !important;
+            min-height: 100vh !important;
+
+        </style>
         <body>
             ${html}
         </body>
@@ -580,188 +586,121 @@ export class UtilService implements OnDestroy {
       this.createJSForSpeechRecognitionBasicTutorial_1());
   }
 
-  // private createHTMLForSpeechRecognitionAdvancedTutorial_2() {
-  //   return beautify.html(`
-  //       <div class="container">
-  //           <h1 class="h1 pt-2 text-center">SpeechRecognition: SpeechGrammar</h1>
-  //           <div class="row mb-4 mt-3">
-  //               <div class="col-lg-6">
-  //                   <div class="card d-flex h-100">
-  //                       <div class="card-header">
-  //                           <label for="informationTextarea" class="fw-500 fs-2">Information</label>
-  //                       </div>
-  //                       <div class="card-body">
-  //                           <textarea readonly class="form-control" rows="11" id="informationTextarea">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</textarea>
-  //                       </div>
-  //                   </div>
-  //               </div>
-  //               <div class="col-lg-6">
-  //                   <div class="card">
-  //                       <div class="card-header">
-  //                           <label class="fw-500 fs-2">Recognition of Words</label>
-  //                       </div>
-  //                       <div class="card-body">
-  //                           <div class="container-fluid">
-  //                               <div class="row">
-  //                                   <div class="col my-auto">
-  //                                       <div class="form-check form-switch">
-  //                                           <label for="continuousValue" class="form-check-label">Use custom SpeechGrammar</label>
-  //                                           <input type="checkbox" class="form-check-input" role="switch" id="customSpeechGrammarCheckbox">
-  //                                       </div>
-  //                                   </div>
-  //                               </div>
-  //                               <div class="row">
-  //                                   <div class="col">
-  //                                       <hr>
-  //                                   </div>
-  //                               </div>
-  //                               <div class="row">
-  //                                   <div class="col">
-  //                                       <label for="interimResultsTextArea" class="fw-500 fs-4">Custom Color SpeechGrammar with Weight 1</label>
-  //                                       <textarea readonly class="form-control" name="InterimResults" id="customColorSpeechGrammarTextArea" rows="4">#JSGF V1.0; grammar colors; public <color> = kushida | Crush | blue | violet | red | green | grey | deepSkyBlue;
-  //                                       </textarea>
-  //                                       <div class="mt-3">
-  //                                         <label for="interimResultsTextArea" class="fw-500 fs-4">Color SpeechGrammar with Weight 0.5</label>
-  //                                         <textarea readonly class="form-control" name="InterimResults" id="colorSpeechGrammarTextArea" rows="4">#JSGF V1.0; grammar colors; public <color> = deepSkyBlue | dodgerBlue | darkSlateBlue | lightSkyBlue | lightBlue | lightSteelBlue | mediumVioletRed | blueViolet | darkViolet | indianRed | orangeRed | seaGreen | springGreen | yellowGreen | darkGrey | darkSlateGrey | grimGrey;
-  //                                         </textarea>
-  //                                       </div>
-  //                                   </div>
-  //                               </div>
-  //                               <div class="row">
-  //                                   <div class="col">
-  //                                       <hr>
-  //                                   </div>
-  //                               </div>
-  //                               <div class="row">
-  //                                   <div class="col">
-  //                                       <label class="fw-500 fs-4">Output</label>
-  //                                       <div class="container-fluid text-center mt-2 p-5 d-flex justify-content-center align-items-center border border-1 border-dark" id="outputContainer">Choose a color, that doesn't appear in the custom SpeechGrammar Area</div>
-  //                                   </div>
-  //                               </div>
-  //                               <div class="row">
-  //                                   <div class="col">
-  //                                       <hr>
-  //                                   </div>
-  //                               </div>
-  //                               <div class="row">
-  //                                   <div class="col">
-  //                                       <div class="d-flex justify-content-between">
-  //                                           <span class="fw-500 fs-4">Status (Error Code):</span>
-  //                                           <span class="fw-500 fs-4" id="status" style="color: green">No Error</span>
-  //                                       </div>
-  //                                   </div>
-  //                               </div>
-  //                               <div class="row">
-  //                                   <div class="col">
-  //                                       <hr>
-  //                                   </div>
-  //                               </div>
-  //                               <div class="row">
-  //                                   <div class="col d-grid">
-  //                                       <button class="btn btn-primary fw-bold fs-3" id="recognitionButton">Start Recognition</button>
-  //                                   </div>
-  //                               </div>
-  //                           </div>
-  //                       </div>
-  //                   </div>
-  //               </div>
-  //           </div>
-  //       </div>
-  //   `);
-  // }
-  //
-  // private createJSForSpeechRecognitionAdvancedTutorial_2() {
-  //   return beautify.js(`
-  //     const customSpeechGrammarCheckbox = document.getElementById('customSpeechGrammarCheckbox');
-  //     const customColorSpeechGrammarTextArea = document.getElementById('customColorSpeechGrammarTextArea');
-  //     const colorSpeechGrammarTextArea = document.getElementById('colorSpeechGrammarTextArea');
-  //     const outputContainer = document.getElementById('outputContainer');
-  //     const status = document.getElementById('status');
-  //
-  //     // init SpeechRecognition API
-  //     var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
-  //     const recognition = new SpeechRecognition();
-  //     recognition.lang = 'de_DE';
-  //     recognition.maxAlternatives = 1;
-  //     recognition.interimResults = false;
-  //     recognition.continuous = false;
-  //
-  //     // init SpeechGrammar
-  //     var SpeechGrammarList = SpeechGrammarList || window.webkitSpeechGrammarList
-  //     const grammars = new SpeechGrammarList();
-  //     // grammars.addFromString(colorSpeechGrammarTextArea.value, 0.5);
-  //     // recognition.grammars = grammars;
-  //
-  //     // tracking of the recognition
-  //     let recognizing;
-  //
-  //     customSpeechGrammarCheckbox.onchange = function () {
-  //       if (customSpeechGrammarCheckbox.checked) {
-  //         const grammarList = new SpeechGrammarList();
-  //         // grammarList.addFromString(colorSpeechGrammarTextArea.value, 0.5);
-  //         grammarList.addFromString(customColorSpeechGrammarTextArea.value, 1);
-  //         recognition.grammars = grammarList;
-  //       }
-  //     }
-  //
-  //     // helper function to disable the recognition
-  //     function reset() {
-  //       recognizing = false;
-  //       recognitionButton.innerHTML = 'Start Recognition';
-  //     }
-  //
-  //     // onstart EventHandler for the SpeechRecognition
-  //     recognition.onstart = function () {
-  //       console.log('Recognition started');
-  //     }
-  //
-  //     // handle recognition error
-  //     recognition.onerror = function (event) {
-  //       status.innerHTML = event.error;
-  //       status.style = 'color: red;';
-  //     }
-  //
-  //     // onresult EventHandler for the SpeechRecognition
-  //     recognition.onresult = function (event) {
-  //       let endResult = "";
-  //
-  //       // loop over all results
-  //       for(let i = 0; i < event.results.length; ++i) {
-  //         // check if result is end result
-  //         if(event.results[i].isFinal) {
-  //           console.log(recognition.grammars);
-  //           endResult += event.results[i][0].transcript;
-  //           endResult += ' with Confidence ' + event.results[i][0].confidence;
-  //         }
-  //       }
-  //       outputContainer.innerHTML = endResult;
-  //     }
-  //
-  //     // onend EventHandler for the SpeechRecognition
-  //     recognition.onend = function () {
-  //       reset();
-  //     }
-  //
-  //     // listener for the button, that starts the recognition
-  //     recognitionButton.addEventListener('click', function () {
-  //       if (recognizing) {
-  //         recognition.stop();
-  //         reset();
-  //       } else {
-  //         recognition.start();
-  //         // reset ui elements
-  //         status.innerHTML = 'No Error';
-  //         status.style = 'color: green;';
-  //         recognizing = true;
-  //         recognitionButton.innerHTML = 'Stop Recognition';
-  //       }
-  //     });`);
-  // }
-  //
-  // private createSpeechRecognitionAdvancedTutorial_2():EditorData {
-  //   return new EditorData(this.createHTMLForSpeechRecognitionAdvancedTutorial_2(),
-  //     this.createJSForSpeechRecognitionAdvancedTutorial_2());
-  // }
+  private createHTMLForSpeechRecognitionAdvancedTutorial_2() {
+    return beautify.html(`
+        <nav class="navbar navbar-expand navbar-light bg-light">
+            <div class="container-fluid">
+                <span class="navbar-brand">Navbar</span>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Preis</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+          <div class="row mb-4 mt-3">
+            <div class="col">
+              <h1 class="h1 pt-2 text-center" id="titleText">Home Page</h1>
+            </div>
+          </div>
+        </div>
+    `);
+  }
+
+  private createJSForSpeechRecognitionAdvancedTutorial_2() {
+    return beautify.js(`
+     const titleText = document.getElementById('titleText');
+    const aTags = Array.from(document.getElementsByTagName('a'));
+
+    const recognition = new webkitSpeechRecognition();
+    recognition.lang = 'de-DE';
+    recognition.continuous = true;
+    let recognitionResult = "";
+
+    const commands = [
+      {
+        command: "Öffne Link Home".toLocaleLowerCase()
+      },
+      {
+        command: "Öffne Link Preis".toLocaleLowerCase()
+      },
+      {
+        command: "Öffne Link Kontakt".toLocaleLowerCase()
+      },
+    ]
+
+    window.addEventListener('load', () => {
+      setOnClickListeners();
+      recognition.start();
+    });
+
+    recognition.onend = function (event) {
+      recognitionResult = "";
+      recognition.start();
+    }
+
+    recognition.onresult = function (event) {
+      // loop over all results
+      for (let i = 0; i < event.results.length; ++i) {
+        // check if result is end result
+        if (event.results[i].isFinal) {
+          recognitionResult += event.results[i][0].transcript;
+          checkCommand(recognitionResult.toLocaleLowerCase());
+        } else {
+          recognitionResult = "";
+        }
+      }
+    }
+
+    function checkCommand(result) {
+      for (let i = 0; i < commands.length; i++) {
+        const element = commands[i];
+        if (result.includes(element.command)) {
+          let link;
+          if (result.includes("Home".toLocaleLowerCase())) {
+            link = aTags.filter(element => element.innerText === "Home")[0];
+          } else if (result.includes("Kontakt".toLocaleLowerCase())) {
+            link = aTags.filter(element => element.innerText === "Kontakt")[0];
+          } else if (result.includes("Preis".toLocaleLowerCase())) {
+            link = aTags.filter(element => element.innerText === "Preis")[0];
+          }
+
+          if (link) {
+            link.click();
+          }
+          recognitionResult = "";
+        }
+      }
+    }
+
+    function setOnClickListeners() {
+      aTags.map(element => {
+        element.addEventListener("click", (e) => {
+          if (element.innerText === "Home") {
+            titleText.innerText = "Home Page";
+          } else if (element.innerText === "Preis") {
+            titleText.innerText = "Pricing Page";
+          } else if (element.innerText === "Kontakt") {
+            titleText.innerText = "Contact Page";
+          }
+          e.preventDefault();
+        });
+      });
+    }
+      `);
+  }
+
+  private createSpeechRecognitionAdvancedTutorial_2():EditorData {
+    return new EditorData(this.createHTMLForSpeechRecognitionAdvancedTutorial_2(),
+      this.createJSForSpeechRecognitionAdvancedTutorial_2());
+  }
 
   ngOnDestroy(): void {
     this.editorDataSubject?.unsubscribe();
